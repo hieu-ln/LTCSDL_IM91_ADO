@@ -36,6 +36,12 @@ namespace ConsoleApp1
                 cmd.CommandText = sqlStr;
                 int total = (int)cmd.ExecuteScalar();
                 Console.WriteLine(" --> Total of Categories: " + total);
+
+                // Cau 3 - Khong co tra ve du lieu
+                sqlStr = "insert into Categories(CategoryName, [Description]) values('CNTT',N'Công Nghệ TT')";
+                cmd.CommandText = sqlStr;
+                cmd.ExecuteNonQuery();
+                Console.WriteLine(" Thêm mới thành công !!!");
             }
             catch(Exception e)
             {
